@@ -1,26 +1,41 @@
-import { ButtonLocation, Cart, CartContainer, HeaderContainer, Location } from "./styles"
-import logo  from '../../assets/images/Logo.svg'
-import { Timer, Scroll, MapPin, ShoppingCart } from 'phosphor-react'
-import { Link } from "react-router-dom"
-import { NavLink } from "react-router-dom"
+import { MapPin, ShoppingCart } from 'phosphor-react';
+import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import logo from '../../assets/images/Logo.svg';
+import {
+  ButtonLocation,
+  Cart,
+  CartContainer,
+  HeaderContainer,
+  Location,
+  TotalCountItems,
+} from './styles';
+import { CartContext } from '../../contexts/CartContext';
 
-export const Header = () => {
+export function Header() {
+  const { productsToAddCart } = useContext(CartContext);
+
   return (
     <HeaderContainer>
-      <img src={logo}/>
+      <Link to="/" style={{ textDecoration: 'none' }}>
+        <img src={logo} />
+      </Link>
       <CartContainer>
         <ButtonLocation>
-          <MapPin size={22} weight="fill"/>
+          <MapPin size={22} weight="fill" />
           <p>Florianópolis, SC</p>
         </ButtonLocation>
-        
-        <NavLink to='/checkout'>
+        <Link to="/checkout" style={{ textDecoration: 'none' }}>
           <Cart>
-            <ShoppingCart size={22} weight="fill"/>
+            <ShoppingCart size={22} weight="fill" />
           </Cart>
-        </NavLink>
-        
+        </Link>
+        {productsToAddCart.length > 0 ? (
+          <TotalCountItems>{productsToAddCart.length}</TotalCountItems>
+        ) : (
+          ''
+        )}
       </CartContainer>
     </HeaderContainer>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
   display: flex;
@@ -17,7 +17,7 @@ export const HeaderContainer = styled.header`
   @media (max-width: 768px) {
     gap: 1rem;
   }
-`
+`;
 
 export const CartContainer = styled.div`
   display: flex;
@@ -26,45 +26,68 @@ export const CartContainer = styled.div`
   @media (max-width: 768px) {
     gap: 0.4rem;
   }
-`
+`;
 
 export const ButtonLocation = styled.div`
   height: 2.375rem;
   width: 10rem;
   border-radius: 6px;
-  background-color: ${props => props.theme['purple-light']};
+  background-color: ${(props) => props.theme['purple-light']};
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 8px;
   gap: 4px;
-  color: ${props => props.theme['purple']};
+  color: ${(props) => props.theme.purple};
   cursor: pointer;
 
-  &:hover{
+  /* &:hover{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-  p{
-    color: ${props => props.theme['purple-dark']};
+  } */
+  p {
+    color: ${(props) => props.theme['purple-dark']};
 
     font-weight: 400;
     font-size: 14px;
     line-height: 130%;
   }
-`
+  &:active {
+    background-color: ${(props) => props.theme.purple};
+    /* color: ${(props) => props.theme.white}; */
+    p,
+    svg {
+      color: ${(props) => props.theme.white};
+    }
+  }
+`;
 
 export const Cart = styled.div`
   height: 2.375rem;
   width: 2.375rem;
   border-radius: 8px;
-  background-color: ${props => props.theme['yellow-light']};
+  background-color: ${(props) => props.theme['yellow-light']};
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${props => props.theme['yellow-dark']};
+  color: ${(props) => props.theme['yellow-dark']};
   cursor: pointer;
-  &:hover{
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  &:active {
+    background-color: ${(props) => props.theme.yellow};
   }
-`
+`;
+
+export const TotalCountItems = styled.div`
+  background-color: ${(props) => props.theme['yellow-dark']};
+  border-radius: 99px;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: ${(props) => props.theme.white};
+  margin-top: -2rem;
+  margin-left: -1.7rem;
+  font-size: 12px;
+  font-weight: 700;
+`;

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const LayoutContainer = styled.div`
   display: flex;
@@ -8,4 +8,4 @@ export const LayoutContainer = styled.div`
   margin: 0 auto;
   background: ${(props) => props.theme['white-back']};
   /* background-color: white; */
-`
+`;
