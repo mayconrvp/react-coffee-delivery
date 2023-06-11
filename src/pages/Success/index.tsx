@@ -1,10 +1,5 @@
 import {
-  MapPinLine,
   CurrencyDollar,
-  CreditCard,
-  Bank,
-  Money,
-  Trash,
   MapPin,
   Timer,
 } from 'phosphor-react';
@@ -25,7 +20,7 @@ import Ilustration from '../../assets/images/Illustration.svg';
 import { CartContext } from '../../contexts/CartContext';
 
 export function Success() {
-  const { productsToAddCart, address, paymentForm } = useContext(CartContext);
+  const { address, paymentForm } = useContext(CartContext);
   console.log(address);
   return (
     <MainContainer>
@@ -46,22 +41,22 @@ export function Success() {
                   Entrega em
                   {' '}
                   <span className="bolder">
-                    {`${address.street}, ${address.number}`}
+                    {`${address ? address.street : 'Endereço não definido'}, ${address ? address.number : 's/ nº'}`}
                   </span>
                 </p>
                 <p>
-                  {`${address.neighborhood
-                  } - ${
-                    address.city
-                  }, ${
-                    address.uf}`}
+                  {`${address ? address.neighborhood : 'Bairro não definido'
+                  } - ${ address ?
+                    address.city : 'Cidade indefinda'
+                  }, ${ address ?
+                    address.uf : 'UF indefinida'}`}
                 </p>
               </InfoContainer>
             </Block>
 
             <Block>
               <IconContainer color="yellow">
-                <Timer />
+                <Timer />~
               </IconContainer>
               <InfoContainer>
                 <p>Previsão de entrega</p>
