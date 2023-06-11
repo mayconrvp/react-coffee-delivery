@@ -143,7 +143,7 @@ export const Checkout = () => {
       return
     }
     navigate('/success')
-    updateCart(null, null, true)
+    updateCart('', 0, true)
   }
 
   const handleFormPayment = (paymentForm: string) => {

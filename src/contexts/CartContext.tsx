@@ -43,7 +43,7 @@ interface CartContextType {
   removeFromCart: (id: string) => void
   getValueTotal: () => number
   saveAddress: (data: any) => void
-  updateCart: (id: string, quantity: number) => void
+  updateCart: (id: string, quantity: number, clear?: boolean) => void
   address: NewAddressFormData | undefined
   setAddress: React.Dispatch<
     React.SetStateAction<NewAddressFormData | undefined>
