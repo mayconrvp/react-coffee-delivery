@@ -33,7 +33,7 @@ export function Success() {
         <CardSuccess>
           <div>
             <Block>
-              <IconContainer color="purple">
+              <IconContainer statusColor="purple">
                 <MapPin />
               </IconContainer>
               <InfoContainer>
@@ -55,7 +55,7 @@ export function Success() {
             </Block>
 
             <Block>
-              <IconContainer color="yellow">
+              <IconContainer statusColor="yellow">
                 <Timer />~
               </IconContainer>
               <InfoContainer>
@@ -65,7 +65,7 @@ export function Success() {
             </Block>
 
             <Block>
-              <IconContainer color="yellow-dark">
+              <IconContainer statusColor="yellowDark">
                 <CurrencyDollar />
               </IconContainer>
               <InfoContainer>

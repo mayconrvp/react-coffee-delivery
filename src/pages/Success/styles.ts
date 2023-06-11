@@ -55,14 +55,24 @@ export const SubTitle = styled.p`
   margin-bottom: 2.5rem;
 `;
 
-export const IconContainer = styled.div`
+const STATUS_COLORS = {
+  yellowDark: 'yellow-dark',
+  purple: 'purple',
+  yellow: 'yellow',
+} as const
+
+interface StatusProps {
+  statusColor: keyof typeof STATUS_COLORS
+}
+
+export const IconContainer = styled.div<StatusProps>`
   display: flex;
   justify-content: center;
   align-items: center;
   height: 2rem;
   width: 2rem;
   border-radius: 99px;
-  background-color: ${(props) => props.theme[props.color] || '#000000'};
+  background-color: ${(props) => props.theme[STATUS_COLORS[props.statusColor]]};
   svg {
     color: ${(props) => props.theme.white};
   }

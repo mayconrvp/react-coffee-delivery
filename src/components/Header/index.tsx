@@ -7,7 +7,6 @@ import {
   Cart,
   CartContainer,
   HeaderContainer,
-  Location,
   TotalCountItems,
 } from './styles';
 import { CartContext } from '../../contexts/CartContext';
